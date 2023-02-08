@@ -1,0 +1,39 @@
+#index-title {
+	color: rgb(171, 171, 171);
+	/* height: 100px; */
+	text-align: center;
+	vertical-align: middle;
+	font-size: 36px;
+	font-family: 'Raleway', sans-serif;
+}
+
+#page-body {
+	animation: fadeInAnimation ease 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	word-wrap: break-word;
+}
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 26px;
+}
+.wrapper {
+    position: relative;
+    height: 200px;
+}
+/* .jumbotron {
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+} */
