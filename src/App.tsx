@@ -4,7 +4,7 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout";
 
 // --- Import your Page Components ---
-const HomePage = () => <div><h1>Home Page</h1></div>; // Assuming you have a Home Page
+const HomePage = () => <div><h1>under progress</h1></div>; // Assuming you have a Home Page
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
