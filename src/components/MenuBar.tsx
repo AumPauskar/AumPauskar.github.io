@@ -9,12 +9,18 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./mode-toggle";
-import { Menu, X } from "lucide-react"; // Import hamburger and close icons
+import { Menu, X } from "lucide-react";
+
+type NavLink = {
+  text: string;
+  to?: string;
+  href?: string;
+};
 
 export function MenuBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { to: "/", text: "Home" },
     { to: "/about", text: "About Me" },
     { href: "https://github.com/AumPauskar", text: "Projects" },
@@ -23,62 +29,77 @@ export function MenuBar() {
     { to: "/contact", text: "Contact" },
   ];
 
+  const renderLink = (link: NavLink, isMobile = false) => {
+    const commonProps = {
+      className: isMobile ? "block py-3 px-4 text-lg" : "",
+      onClick: () => isMobile && setIsMobileMenuOpen(false),
+    };
+
+    if (link.to) {
+      return <Link to={link.to} {...commonProps}>{link.text}</Link>;
+    }
+    if (link.href) {
+      return <a href={link.href} {...commonProps}>{link.text}</a>;
+    }
+    return null;
+  };
+
   return (
-    <header className="border-b relative">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        {/* Desktop Menu */}
-        <div className="hidden md:flex">
-          <NavigationMenu>
-            <NavigationMenuList className="space-x-2">
-              {navLinks.map((link) => (
-                <NavigationMenuItem key={link.text}>
-                  <NavigationMenuLink asChild>
-                    {link.to ? (
-                      <Link to={link.to}>{link.text}</Link>
-                    ) : (
-                      <a href={link.href}>{link.text}</a>
-                    )}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+    <>
+      <header className="border-b sticky top-0 z-40 bg-background/95 backdrop-blur-sm">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+          <div className="md:hidden">
+            <button onClick={() => setIsMobileMenuOpen(true)}>
+              <Menu size={24} />
+              <span className="sr-only">Open menu</span>
+            </button>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            <span className="sr-only">Open menu</span>
-          </button>
-        </div>
+          <div className="hidden md:flex flex-1">
+            <NavigationMenu>
+              <NavigationMenuList className="space-x-2">
+                {navLinks.map((link) => (
+                  <NavigationMenuItem key={link.text}>
+                    <NavigationMenuLink asChild>
+                      {renderLink(link)}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
-        {/* Right side content (always visible) */}
-        <div className="flex items-center">
-          <ModeToggle />
+          <div className="flex items-center">
+            <ModeToggle />
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Sidebar/Drawer - MOVED OUTSIDE of <header> */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-t">
-          <nav className="flex flex-col space-y-2 p-4">
-            {navLinks.map((link) => (
-              <div key={link.text} className="text-center">
-                 {link.to ? (
-                  <Link to={link.to} onClick={() => setIsMobileMenuOpen(false)} className="block py-2">
-                    {link.text}
-                  </Link>
-                ) : (
-                  <a href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="block py-2">
-                    {link.text}
-                  </a>
-                )}
-              </div>
-            ))}
-          </nav>
-        </div>
+        <>
+          <div
+            className="fixed inset-0 z-50 bg-black/80 animate-in fade-in-0"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="fixed inset-y-0 left-0 z-50 w-3/4 max-w-sm border-r bg-background p-6 animate-in slide-in-from-left-full sm:max-w-sm">
+            <div className="flex items-center justify-between mb-6">
+              <span className="font-bold text-xl">Menu</span>
+              <button onClick={() => setIsMobileMenuOpen(false)}>
+                <X size={24} />
+                <span className="sr-only">Close menu</span>
+              </button>
+            </div>
+            <nav className="flex flex-col space-y-2">
+              {navLinks.map((link) => (
+                <div key={link.text}>
+                  {renderLink(link, true)}
+                </div>
+              ))}
+            </nav>
+          </div>
+        </>
       )}
-    </header>
+    </>
   );
 }
