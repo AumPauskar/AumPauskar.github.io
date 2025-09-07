@@ -1,21 +1,27 @@
-// src/App.tsx (or your main router file)
+// src/App.tsx
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout";
 
-// Your page components
-const HomePage = () => <div><h1>Home Page</h1></div>;
-const AboutPage = () => <div><h1>About Us</h1></div>;
-const WidgetsPage = () => <div><h1>Widgets</h1></div>;
+// --- Import your Page Components ---
+const HomePage = () => <div><h1>Home Page</h1></div>; // Assuming you have a Home Page
+import { AboutPage } from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { SkillsPage } from "./pages/SkillsPage";
+import { BlogPage } from "./pages/BlogPage";
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
       { path: "/", element: <HomePage /> },
+      // --- Add the new routes here ---
       { path: "/about", element: <AboutPage /> },
-      { path: "/products/widgets", element: <WidgetsPage /> },
-      // ... other page routes
+      { path: "/contact", element: <ContactPage /> },
+      { path: "/projects", element: <ProjectsPage /> },
+      { path: "/skills", element: <SkillsPage /> },
+      { path: "/blog", element: <BlogPage /> },
     ],
   },
 ]);
