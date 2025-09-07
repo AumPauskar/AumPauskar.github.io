@@ -1,6 +1,6 @@
 // src/components/mode-toggle.tsx
 
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -11,7 +11,7 @@ import {
 import { useTheme } from "@/components/theme-provider"
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
 
   return (
     <DropdownMenu>
@@ -24,13 +24,22 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          <div className="flex items-center justify-between w-full">
+            <span>Light</span>
+            {theme === "light" && <Check className="h-4 w-4" />}
+          </div>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          <div className="flex items-center justify-between w-full">
+            <span>Dark</span>
+            {theme === "dark" && <Check className="h-4 w-4" />}
+          </div>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          <div className="flex items-center justify-between w-full">
+            <span>System</span>
+            {theme === "system" && <Check className="h-4 w-4" />}
+          </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
