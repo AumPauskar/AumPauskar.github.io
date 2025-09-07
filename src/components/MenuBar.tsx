@@ -11,11 +11,13 @@ import {
 import { Link } from "react-router-dom";
 import React from "react";
 import { cn } from "@/lib/utils"; // Make sure you have this utility from shadcn
+import { ModeToggle } from "./mode-toggle"; // 1. Import the toggle
 
 export function MenuBar() {
   return (
     <header className="border-b">
       <div className="container mx-auto flex h-16 items-center px-4">
+        <ModeToggle /> {/* 2. Add the toggle to the menu bar */}
         <NavigationMenu>
           <NavigationMenuList>
             {/* Item 1: Home Link */}
