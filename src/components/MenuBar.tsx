@@ -14,7 +14,7 @@ export function MenuBar() {
     <header className="border-b">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <NavigationMenu>
-          <NavigationMenuList className="space-x-2"> {/* Added spacing */}
+          <NavigationMenuList className="space-x-2">
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link to="/">Home</Link>
@@ -27,9 +27,12 @@ export function MenuBar() {
               </NavigationMenuLink>
             </NavigationMenuItem>
 
+            {/* --- UPDATED PROJECTS LINK (removed target="_blank") --- */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link to="/projects">Projects</Link>
+                <a href="https://github.com/AumPauskar">
+                  Projects
+                </a>
               </NavigationMenuLink>
             </NavigationMenuItem>
             
@@ -39,9 +42,12 @@ export function MenuBar() {
               </NavigationMenuLink>
             </NavigationMenuItem>
 
+            {/* --- UPDATED BLOG LINK (removed target="_blank") --- */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link to="/blog">Blog</Link>
+                <a href="http://aumpauskar.github.io/blog/">
+                  Blog
+                </a>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
