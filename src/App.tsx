@@ -1,6 +1,6 @@
 // src/App.tsx
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout";
 
 // --- Import your Page Components ---
@@ -11,7 +11,7 @@ import { ProjectsPage } from "./pages/ProjectsPage";
 import { SkillsPage } from "./pages/SkillsPage";
 import { BlogPage } from "./pages/BlogPage";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Layout />,
     children: [
