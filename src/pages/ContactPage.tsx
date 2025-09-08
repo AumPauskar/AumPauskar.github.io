@@ -22,6 +22,10 @@ export function ContactPage() {
       value: "aumpauskar.dev@gmail.com",
       href: "mailto:aumpauskar.dev@gmail.com",
     },
+    { platform: "Mastodon",
+      value: "@aumpauskar",
+      href: "https://mastodon.social/@aumpauskar",
+    },
   ];
 
   return (
