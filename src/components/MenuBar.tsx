@@ -6,10 +6,11 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  navigationMenuTriggerStyle, // Import the style helper
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./mode-toggle";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 type NavLink = {
   text: string;
@@ -29,18 +30,37 @@ export function MenuBar() {
     { to: "/contact", text: "Contact" },
   ];
 
-  const renderLink = (link: NavLink, isMobile = false) => {
+  const renderLink = (link: NavLink, isMobile: boolean) => {
     const commonProps = {
-      className: isMobile ? "block py-3 px-4 text-lg" : "",
       onClick: () => isMobile && setIsMobileMenuOpen(false),
+      // Open external links in a new tab
+      ...(link.href && { target: "_blank", rel: "noopener noreferrer" })
     };
+    
+    // Determine the correct classes for mobile or desktop view
+    const mobileClasses = "flex items-center w-full py-3 px-4 text-lg";
+    const desktopClasses = navigationMenuTriggerStyle();
+    const finalClasses = isMobile ? mobileClasses : desktopClasses;
 
+    // Internal navigation using React Router's Link
     if (link.to) {
-      return <Link to={link.to} {...commonProps}>{link.text}</Link>;
+      return (
+        <Link to={link.to} className={finalClasses} {...commonProps}>
+          {link.text}
+        </Link>
+      );
     }
+    
+    // External link using a standard anchor tag
     if (link.href) {
-      return <a href={link.href} {...commonProps}>{link.text}</a>;
+      return (
+        <a href={link.href} className={finalClasses} {...commonProps}>
+          {link.text}
+          <ArrowUpRight className="h-4 w-4 ml-1 flex-shrink-0" />
+        </a>
+      );
     }
+
     return null;
   };
 
@@ -60,9 +80,8 @@ export function MenuBar() {
               <NavigationMenuList className="space-x-2">
                 {navLinks.map((link) => (
                   <NavigationMenuItem key={link.text}>
-                    <NavigationMenuLink asChild>
-                      {renderLink(link)}
-                    </NavigationMenuLink>
+                    {/* The asChild prop is no longer needed here since we render the full component */}
+                    {renderLink(link, false)}
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
@@ -75,7 +94,7 @@ export function MenuBar() {
         </div>
       </header>
 
-      {/* Mobile Sidebar/Drawer - MOVED OUTSIDE of <header> */}
+      {/* Mobile Sidebar/Drawer */}
       {isMobileMenuOpen && (
         <>
           <div
