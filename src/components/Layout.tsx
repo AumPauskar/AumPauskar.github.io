@@ -10,9 +10,9 @@ export function Layout() {
       <main className="flex-grow container mx-auto p-4">
         <Outlet /> {/* Page content renders here */}
       </main>
-      <footer className="border-t py-4 text-center text-sm text-muted-foreground">
+      {/* <footer className="border-t py-4 text-center text-sm text-muted-foreground">
         My Awesome App © 2025
-      </footer>
+      </footer> */}
     </div>
   );
 }
