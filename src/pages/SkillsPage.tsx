@@ -1,18 +1,21 @@
 // src/pages/SkillsPage.tsx
 
 import {
-  SiAndroid, SiArduino, SiBlender, SiBootstrap, SiC, SiCplusplus, SiCss3,
-  SiDart, SiDjango, SiDocker, SiElixir, SiExpress, SiFigma, SiFirebase,
-  SiFlask, SiFlutter, SiGit, SiJavascript, SiKotlin, SiLinux, SiMariadb,
-  SiMysql, SiNginx, SiNodedotjs, SiPhp, SiPostman, SiPython, SiReact,
-  SiTensorflow, SiUnrealengine
+  SiAndroid, SiArduino, SiAutodesk, SiBlender, SiBootstrap, SiC, SiCplusplus, 
+  SiCss3, SiDart, SiDjango, SiDocker, SiElixir, SiExpress, SiFigma, 
+  SiFirebase, SiFlask, SiFlutter, SiGit, SiJavascript, SiKotlin, SiLinux, 
+  SiMariadb, SiMysql, SiNginx, SiNodedotjs, SiPhp, SiPostman, SiPython, 
+  SiReact, SiTensorflow, SiUnrealengine, SiWordpress, SiKubernetes, 
+  SiTerraform, SiGooglecloud, SiAmazon
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
 // Array of skills with their icons and names
 const skills = [
+  { icon: <SiAmazon size={40} />, name: "AWS" },
   { icon: <SiAndroid size={40} />, name: "Android" },
   { icon: <SiArduino size={40} />, name: "Arduino" },
+  { icon: <SiAutodesk size={40} />, name: "AutoCAD" },
   { icon: <SiBlender size={40} />, name: "Blender" },
   { icon: <SiBootstrap size={40} />, name: "Bootstrap" },
   { icon: <SiC size={40} />, name: "C" },
@@ -27,21 +30,26 @@ const skills = [
   { icon: <SiFirebase size={40} />, name: "Firebase" },
   { icon: <SiFlask size={40} />, name: "Flask" },
   { icon: <SiFlutter size={40} />, name: "Flutter" },
+  { icon: <SiAutodesk size={40} />, name: "Fusion 360" },
   { icon: <SiGit size={40} />, name: "Git" },
+  { icon: <SiGooglecloud size={40} />, name: "GCP" },
   { icon: <FaJava size={40} />, name: "Java" },
   { icon: <SiJavascript size={40} />, name: "JavaScript" },
   { icon: <SiKotlin size={40} />, name: "Kotlin" },
+  { icon: <SiKubernetes size={40} />, name: "Kubernetes" },
   { icon: <SiLinux size={40} />, name: "Linux" },
   { icon: <SiMariadb size={40} />, name: "MariaDB" },
   { icon: <SiMysql size={40} />, name: "MySQL" },
   { icon: <SiNginx size={40} />, name: "Nginx" },
   { icon: <SiNodedotjs size={40} />, name: "Node.js" },
-  { icon: <SiPostman size={40} />, name: "Postman" },
   { icon: <SiPhp size={40} />, name: "PHP" },
+  { icon: <SiPostman size={40} />, name: "Postman" },
   { icon: <SiPython size={40} />, name: "Python" },
   { icon: <SiReact size={40} />, name: "React" },
+  { icon: <SiTerraform size={40} />, name: "Terraform" },
   { icon: <SiTensorflow size={40} />, name: "TensorFlow" },
   { icon: <SiUnrealengine size={40} />, name: "Unreal Engine" },
+  { icon: <SiWordpress size={40} />, name: "Wordpress" },
 ];
 
 export function SkillsPage() {
