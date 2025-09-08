@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle, // Import the style helper
 } from "@/components/ui/navigation-menu";
