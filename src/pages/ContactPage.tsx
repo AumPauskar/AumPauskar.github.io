@@ -19,8 +19,8 @@ export function ContactPage() {
     },
     {
       platform: "Email",
-      value: "aumpauskar111@gmail.com",
-      href: "mailto:aumpauskar111@gmail.com",
+      value: "aumpauskar.dev@gmail.com",
+      href: "mailto:aumpauskar.dev@gmail.com",
     },
   ];
 
