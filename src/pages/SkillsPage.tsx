@@ -13,44 +13,44 @@ import { Link } from "react-router-dom";
 
 // Array of skills with their icons and names
 const skills = [
-  { icon: <SiAmazon size={40} />, name: "AWS" },
-  { icon: <SiAndroid size={40} />, name: "Android" },
-  { icon: <SiArduino size={40} />, name: "Arduino" },
-  { icon: <SiAutodesk size={40} />, name: "AutoCAD" },
-  { icon: <SiBlender size={40} />, name: "Blender" },
-  { icon: <SiBootstrap size={40} />, name: "Bootstrap" },
+  { icon: <SiAmazon size={40} />, name: "AWS", link: "/skills/aws" },
+  { icon: <SiAndroid size={40} />, name: "Android", link: "/skills/android" },
+  { icon: <SiArduino size={40} />, name: "Arduino", link: "/skills/arduino" },
+  { icon: <SiAutodesk size={40} />, name: "AutoCAD", link: "/skills/autocad" },
+  { icon: <SiBlender size={40} />, name: "Blender", link: "/skills/blender" },
+  { icon: <SiBootstrap size={40} />, name: "Bootstrap", link: "/skills/bootstrap" },
   { icon: <SiC size={40} />, name: "C", link: "/skills/c" },
   { icon: <SiCplusplus size={40} />, name: "C++", link: "/skills/c" },
-  { icon: <SiCss3 size={40} />, name: "CSS3" },
-  { icon: <SiDart size={40} />, name: "Dart" },
-  { icon: <SiDjango size={40} />, name: "Django" },
-  { icon: <SiDocker size={40} />, name: "Docker" },
-  { icon: <SiElixir size={40} />, name: "Elixir" },
-  { icon: <SiExpress size={40} />, name: "Express" },
-  { icon: <SiFigma size={40} />, name: "Figma" },
-  { icon: <SiFirebase size={40} />, name: "Firebase" },
-  { icon: <SiFlask size={40} />, name: "Flask" },
-  { icon: <SiFlutter size={40} />, name: "Flutter" },
-  { icon: <SiAutodesk size={40} />, name: "Fusion 360" },
-  { icon: <SiGit size={40} />, name: "Git" },
-  { icon: <SiGooglecloud size={40} />, name: "GCP" },
-  { icon: <FaJava size={40} />, name: "Java" },
-  { icon: <SiJavascript size={40} />, name: "JavaScript" },
-  { icon: <SiKotlin size={40} />, name: "Kotlin" },
-  { icon: <SiKubernetes size={40} />, name: "Kubernetes" },
-  { icon: <SiLinux size={40} />, name: "Linux" },
-  { icon: <SiMariadb size={40} />, name: "MariaDB" },
-  { icon: <SiMysql size={40} />, name: "MySQL" },
-  { icon: <SiNginx size={40} />, name: "Nginx" },
-  { icon: <SiNodedotjs size={40} />, name: "Node.js" },
-  { icon: <SiPhp size={40} />, name: "PHP" },
-  { icon: <SiPostman size={40} />, name: "Postman" },
-  { icon: <SiPython size={40} />, name: "Python" },
-  { icon: <SiReact size={40} />, name: "React" },
-  { icon: <SiTerraform size={40} />, name: "Terraform" },
-  { icon: <SiTensorflow size={40} />, name: "TensorFlow" },
-  { icon: <SiUnrealengine size={40} />, name: "Unreal Engine" },
-  { icon: <SiWordpress size={40} />, name: "Wordpress" },
+  { icon: <SiCss3 size={40} />, name: "CSS3", link: "/skills/css3" },
+  { icon: <SiDart size={40} />, name: "Dart", link: "/skills/dart" },
+  { icon: <SiDjango size={40} />, name: "Django", link: "/skills/django" },
+  { icon: <SiDocker size={40} />, name: "Docker", link: "/skills/docker" },
+  { icon: <SiElixir size={40} />, name: "Elixir", link: "/skills/elixir" },
+  { icon: <SiExpress size={40} />, name: "Express", link: "/skills/express" },
+  { icon: <SiFigma size={40} />, name: "Figma", link: "/skills/figma" },
+  { icon: <SiFirebase size={40} />, name: "Firebase", link: "/skills/firebase" },
+  { icon: <SiFlask size={40} />, name: "Flask", link: "/skills/flask" },
+  { icon: <SiFlutter size={40} />, name: "Flutter", link: "/skills/flutter" },
+  { icon: <SiAutodesk size={40} />, name: "Fusion 360", link: "/skills/fusion360" },
+  { icon: <SiGit size={40} />, name: "Git", link: "/skills/git" },
+  { icon: <SiGooglecloud size={40} />, name: "GCP", link: "/skills/gcp" },
+  { icon: <FaJava size={40} />, name: "Java", link: "/skills/java" },
+  { icon: <SiJavascript size={40} />, name: "JavaScript", link: "/skills/javascript" },
+  { icon: <SiKotlin size={40} />, name: "Kotlin", link: "/skills/kotlin" },
+  { icon: <SiKubernetes size={40} />, name: "Kubernetes", link: "/skills/kubernetes" },
+  { icon: <SiLinux size={40} />, name: "Linux", link: "/skills/linux" },
+  { icon: <SiMariadb size={40} />, name: "MariaDB", link: "/skills/mariadb" },
+  { icon: <SiMysql size={40} />, name: "MySQL", link: "/skills/mysql" },
+  { icon: <SiNginx size={40} />, name: "Nginx", link: "/skills/nginx" },
+  { icon: <SiNodedotjs size={40} />, name: "Node.js", link: "/skills/nodejs" },
+  { icon: <SiPhp size={40} />, name: "PHP", link: "/skills/php" },
+  { icon: <SiPostman size={40} />, name: "Postman", link: "/skills/postman" },
+  { icon: <SiPython size={40} />, name: "Python", link: "/skills/python" },
+  { icon: <SiReact size={40} />, name: "React", link: "/skills/react" },
+  { icon: <SiTerraform size={40} />, name: "Terraform", link: "/skills/terraform" },
+  { icon: <SiTensorflow size={40} />, name: "TensorFlow", link: "/skills/tensorflow" },
+  { icon: <SiUnrealengine size={40} />, name: "Unreal Engine", link: "/skills/unrealengine" },
+  { icon: <SiWordpress size={40} />, name: "Wordpress", link: "/skills/wordpress" },
 ];
 
 export function SkillsPage() {
@@ -58,8 +58,8 @@ export function SkillsPage() {
     <div>
       <h1 className="text-3xl font-bold mb-8">Languages and Tools</h1>
       <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-        {skills.map((skill, index) => {
-          const skillContent = (
+        {skills.map((skill, index) => (
+          <Link to={skill.link} key={index}>
             <div
               className="flex flex-col items-center justify-center p-4 w-32 h-32
                          bg-secondary rounded-lg transition-transform
@@ -68,22 +68,8 @@ export function SkillsPage() {
               {skill.icon}
               <p className="mt-2 text-sm text-center">{skill.name}</p>
             </div>
-          );
-
-          if (skill.link) {
-            return (
-              <Link to={skill.link} key={index}>
-                {skillContent}
-              </Link>
-            );
-          }
-
-          return (
-            <div key={index}>
-              {skillContent}
-            </div>
-          );
-        })}
+          </Link>
+        ))}
       </div>
     </div>
   );
