@@ -1,14 +1,15 @@
 // src/pages/SkillsPage.tsx
 
 import {
-  SiAndroid, SiArduino, SiAutodesk, SiBlender, SiBootstrap, SiC, SiCplusplus, 
-  SiCss3, SiDart, SiDjango, SiDocker, SiElixir, SiExpress, SiFigma, 
-  SiFirebase, SiFlask, SiFlutter, SiGit, SiJavascript, SiKotlin, SiLinux, 
-  SiMariadb, SiMysql, SiNginx, SiNodedotjs, SiPhp, SiPostman, SiPython, 
-  SiReact, SiTensorflow, SiUnrealengine, SiWordpress, SiKubernetes, 
+  SiAndroid, SiArduino, SiAutodesk, SiBlender, SiBootstrap, SiC, SiCplusplus,
+  SiCss3, SiDart, SiDjango, SiDocker, SiElixir, SiExpress, SiFigma,
+  SiFirebase, SiFlask, SiFlutter, SiGit, SiJavascript, SiKotlin, SiLinux,
+  SiMariadb, SiMysql, SiNginx, SiNodedotjs, SiPhp, SiPostman, SiPython,
+  SiReact, SiTensorflow, SiUnrealengine, SiWordpress, SiKubernetes,
   SiTerraform, SiGooglecloud, SiAmazon
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Array of skills with their icons and names
 const skills = [
@@ -18,8 +19,8 @@ const skills = [
   { icon: <SiAutodesk size={40} />, name: "AutoCAD" },
   { icon: <SiBlender size={40} />, name: "Blender" },
   { icon: <SiBootstrap size={40} />, name: "Bootstrap" },
-  { icon: <SiC size={40} />, name: "C" },
-  { icon: <SiCplusplus size={40} />, name: "C++" },
+  { icon: <SiC size={40} />, name: "C", link: "/skills/c" },
+  { icon: <SiCplusplus size={40} />, name: "C++", link: "/skills/c" },
   { icon: <SiCss3 size={40} />, name: "CSS3" },
   { icon: <SiDart size={40} />, name: "Dart" },
   { icon: <SiDjango size={40} />, name: "Django" },
@@ -57,17 +58,32 @@ export function SkillsPage() {
     <div>
       <h1 className="text-3xl font-bold mb-8">Languages and Tools</h1>
       <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center p-4 w-32 h-32 
-                       bg-secondary rounded-lg transition-transform 
-                       hover:scale-110 hover:shadow-lg"
-          >
-            {skill.icon}
-            <p className="mt-2 text-sm text-center">{skill.name}</p>
-          </div>
-        ))}
+        {skills.map((skill, index) => {
+          const skillContent = (
+            <div
+              className="flex flex-col items-center justify-center p-4 w-32 h-32
+                         bg-secondary rounded-lg transition-transform
+                         hover:scale-110 hover:shadow-lg"
+            >
+              {skill.icon}
+              <p className="mt-2 text-sm text-center">{skill.name}</p>
+            </div>
+          );
+
+          if (skill.link) {
+            return (
+              <Link to={skill.link} key={index}>
+                {skillContent}
+              </Link>
+            );
+          }
+
+          return (
+            <div key={index}>
+              {skillContent}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
