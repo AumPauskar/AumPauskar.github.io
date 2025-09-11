@@ -9,19 +9,34 @@ import { Button } from "@/components/ui/button"
 
 const pythonProjects = [
   {
-    name: "Web Scraper",
-    description: "A versatile web scraping tool built with Beautiful Soup and Requests to extract data from various websites for analysis.",
-    link: "#" // Replace with your actual project link
+    name: "OOPS with Python and packages | Aum's blogging site",
+    description: "A comprehensive detailed document on working of python",
+    link: "https://aumpauskar.github.io/blog/posts/python/python_oops/"
   },
   {
-    name: "Flask API",
-    description: "A lightweight RESTful API for a blog application, built using the Flask microframework to handle backend logic.",
-    link: "#" // Replace with your actual project link
+    name: "Blog - Topic: Python",
+    description: "List of all the documents under my blog",
+    link: "https://aumpauskar.github.io/blog/tags/python/"
   },
   {
-    name: "Data Analysis with Pandas",
-    description: "Jupyter notebooks showcasing data cleaning, analysis, and visualization using Pandas and Matplotlib.",
-    link: "#" // Replace with your actual project link
+    name: "F1 data analysis",
+    description: "A jupyter notebook that compares qualifying times between the fastest and slowest car using publicly available F1 data",
+    link: "https://github.com/AumPauskar/f1-analysis-stats"
+  },
+  {
+    name: "F1.5 championship",
+    description: "A mock of the popular F1 fantasy game but with prediction of the top 10 instead",
+    link: "https://github.com/AumPauskar/f1.5-championship"
+  },
+  {
+    name: "Cursed pong",
+    description: "A simple pong game made by pygame",
+    link: "https://github.com/AumPauskar/Cursed-pong"
+  },
+  {
+    name: "Discord bot",
+    description: "A discord bot that hooks and replies to chat message. Does webscraping, simple reply etc",
+    link: "https://github.com/AumPauskar/Discord-Bot"
   }
 ];
 
