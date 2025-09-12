@@ -44,6 +44,7 @@ import { NodejsSkillPage } from "./pages/skills/nodejs";
 import { PhpSkillPage } from "./pages/skills/php";
 import { PostmanSkillPage } from "./pages/skills/postman";
 import { PythonSkillPage } from "./pages/skills/python";
+import { RaspberryPiSkillPage } from "./pages/skills/raspberrypi";
 import { ReactSkillPage } from "./pages/skills/react";
 import { TerraformSkillPage } from "./pages/skills/terraform";
 import { TensorflowSkillPage } from "./pages/skills/tensorflow";
@@ -94,6 +95,7 @@ const router = createHashRouter([
       { path: "/skills/php", element: <PhpSkillPage /> },
       { path: "/skills/postman", element: <PostmanSkillPage /> },
       { path: "/skills/python", element: <PythonSkillPage /> },
+      { path: "/skills/raspberrypi", element: <RaspberryPiSkillPage /> },
       { path: "/skills/react", element: <ReactSkillPage /> },
       { path: "/skills/terraform", element: <TerraformSkillPage /> },
       { path: "/skills/tensorflow", element: <TensorflowSkillPage /> },

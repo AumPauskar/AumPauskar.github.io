@@ -6,7 +6,7 @@ import {
   SiFirebase, SiFlask, SiFlutter, SiGit, SiJavascript, SiKotlin, SiLinux,
   SiMariadb, SiMysql, SiNginx, SiNodedotjs, SiPhp, SiPostman, SiPython,
   SiReact, SiTensorflow, SiUnrealengine, SiWordpress, SiKubernetes,
-  SiTerraform, SiGooglecloud, SiAmazon
+  SiTerraform, SiGooglecloud, SiAmazon, SiRaspberrypi
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -46,6 +46,7 @@ const skills = [
   { icon: <SiPhp size={40} />, name: "PHP", link: "/skills/php" },
   { icon: <SiPostman size={40} />, name: "Postman", link: "/skills/postman" },
   { icon: <SiPython size={40} />, name: "Python", link: "/skills/python" },
+  { icon: <SiRaspberrypi size={40} />, name: "Raspberry Pi", link: "/skills/raspberrypi" },
   { icon: <SiReact size={40} />, name: "React", link: "/skills/react" },
   { icon: <SiTerraform size={40} />, name: "Terraform", link: "/skills/terraform" },
   { icon: <SiTensorflow size={40} />, name: "TensorFlow", link: "/skills/tensorflow" },
