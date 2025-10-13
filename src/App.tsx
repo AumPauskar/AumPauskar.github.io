@@ -23,6 +23,7 @@ import { Css3SkillPage } from "./pages/skills/css3";
 import { DartSkillPage } from "./pages/skills/dart";
 import { DjangoSkillPage } from "./pages/skills/django";
 import { DockerSkillPage } from "./pages/skills/docker";
+import { EcommerceSkillPage } from "./pages/skills/ecommerce";
 import { ElixirSkillPage } from "./pages/skills/elixir";
 import { ExpressSkillPage } from "./pages/skills/express";
 import { FigmaSkillPage } from "./pages/skills/figma";
@@ -74,6 +75,7 @@ const router = createHashRouter([
       { path: "/skills/dart", element: <DartSkillPage /> },
       { path: "/skills/django", element: <DjangoSkillPage /> },
       { path: "/skills/docker", element: <DockerSkillPage /> },
+      { path: "/skills/ecommerce", element: <EcommerceSkillPage /> },
       { path: "/skills/elixir", element: <ElixirSkillPage /> },
       { path: "/skills/express", element: <ExpressSkillPage /> },
       { path: "/skills/figma", element: <FigmaSkillPage /> },

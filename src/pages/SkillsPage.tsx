@@ -6,7 +6,8 @@ import {
   SiFirebase, SiFlask, SiFlutter, SiGit, SiJavascript, SiKotlin, SiLinux,
   SiMariadb, SiMysql, SiNginx, SiNodedotjs, SiPhp, SiPostman, SiPython,
   SiReact, SiTensorflow, SiUnrealengine, SiWordpress, SiKubernetes,
-  SiTerraform, SiGooglecloud, SiAmazon, SiRaspberrypi
+  SiTerraform, SiGooglecloud, SiAmazon, SiRaspberrypi,
+  SiShopify
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -25,6 +26,7 @@ const skills = [
   { icon: <SiDart size={40} />, name: "Dart", link: "/skills/dart" },
   { icon: <SiDjango size={40} />, name: "Django", link: "/skills/django" },
   { icon: <SiDocker size={40} />, name: "Docker", link: "/skills/docker" },
+  { icon: <SiShopify size={40} />, name: "eCommerce", link: "/skills/ecommerce" },
   { icon: <SiElixir size={40} />, name: "Elixir", link: "/skills/elixir" },
   { icon: <SiExpress size={40} />, name: "Express", link: "/skills/express" },
   { icon: <SiFigma size={40} />, name: "Figma", link: "/skills/figma" },
@@ -51,7 +53,7 @@ const skills = [
   { icon: <SiTerraform size={40} />, name: "Terraform", link: "/skills/terraform" },
   { icon: <SiTensorflow size={40} />, name: "TensorFlow", link: "/skills/tensorflow" },
   { icon: <SiUnrealengine size={40} />, name: "Unreal Engine", link: "/skills/unrealengine" },
-  { icon: <SiWordpress size={40} />, name: "Wordpress", link: "/skills/wordpress" },
+  { icon: <SiWordpress size={40} />, name: "Wordpress", link: "/skills/wordpress" }
 ];
 
 export function SkillsPage() {
