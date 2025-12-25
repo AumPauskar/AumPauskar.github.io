@@ -1,4 +1,3 @@
-// src/components/MenuBar.tsx
 
 import { useState } from "react";
 import {
@@ -25,6 +24,7 @@ export function MenuBar() {
     { to: "/about", text: "About Me" },
     { href: "https://github.com/AumPauskar", text: "Projects" },
     { to: "/skills", text: "Skills" },
+    { to: "/roadmap", text: "Roadmap" },
     { href: "http://aumpauskar.github.io/blog/", text: "Blog" },
     { to: "/contact", text: "Contact" },
   ];
@@ -35,7 +35,7 @@ export function MenuBar() {
       // Open external links in a new tab
       ...(link.href && { target: "_blank", rel: "noopener noreferrer" })
     };
-    
+
     // Determine the correct classes for mobile or desktop view
     const mobileClasses = "flex items-center w-full py-3 px-4 text-lg";
     const desktopClasses = navigationMenuTriggerStyle();
@@ -49,7 +49,7 @@ export function MenuBar() {
         </Link>
       );
     }
-    
+
     // External link using a standard anchor tag
     if (link.href) {
       return (

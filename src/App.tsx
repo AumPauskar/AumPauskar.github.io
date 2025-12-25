@@ -1,4 +1,3 @@
-// src/App.tsx
 
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout";
@@ -10,6 +9,8 @@ import { ContactPage } from "./pages/ContactPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { SkillsPage } from "./pages/SkillsPage";
 import { BlogPage } from "./pages/BlogPage";
+import { RoadmapPage } from "./pages/RoadmapPage";
+import { RoadmapDetail } from "./pages/RoadmapDetail";
 
 // --- Import Skill Page Components ---
 import { AWSSkillPage } from "./pages/skills/aws";
@@ -63,6 +64,8 @@ const router = createHashRouter([
       { path: "/projects", element: <ProjectsPage /> },
       { path: "/skills", element: <SkillsPage /> },
       { path: "/blog", element: <BlogPage /> },
+      { path: "/roadmap", element: <RoadmapPage /> },
+      { path: "/roadmap/:track", element: <RoadmapDetail /> },
       // --- Add skill routes here ---
       { path: "/skills/aws", element: <AWSSkillPage /> },
       { path: "/skills/android", element: <AndroidSkillPage /> },
