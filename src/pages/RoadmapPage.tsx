@@ -22,7 +22,7 @@ export function RoadmapPage() {
     return (
         <div className="container mx-auto px-4 py-12 max-w-6xl">
             <div className="text-center mb-16 space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-5xl font-bold">
                     Choose Your Path
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
